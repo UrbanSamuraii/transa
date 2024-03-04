@@ -1,0 +1,191 @@
+:root {
+	--csb-width: 350px;
+}
+
+.chat {
+	background-size: cover;
+}
+
+.form-Create-Conversation {
+	display: block;
+	width: 430px;
+	background-color: #222222CC;
+	backdrop-filter: blur(6px);
+	border-radius: 10px;
+	text-align: center;
+	padding: 20px;
+	& h2 {
+		color: white;
+		text-transform: uppercase;
+		font-size: 20px;
+		font-family: 'Anta';
+		letter-spacing: 2px;
+		font-weight: 600;
+		margin-bottom: 15px;
+	}
+}
+
+.input-createConv-container {
+	padding: 10px;
+}
+
+.button-createConv-container {
+	margin-top: 10px;
+}
+
+.button-add-user {
+	background-color: r#222222;
+	color: white;
+	font-size: 17px;
+	font-family: 'Anta';
+	border-radius: 10px;
+	height: 40px;
+	width: 100px;
+	cursor: pointer;
+	margin-top: 20px;
+	text-transform: capitalize;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+	transition: background-color 0.3s ease;
+}
+
+.button-add-user:hover {
+	background-color: #363636;
+}
+
+.menu-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+}
+
+.menu-button {
+	height: 60px;
+	width: 250px;
+	background-color: rgb(29, 29, 29);
+	font-size: 20px;
+	cursor: pointer;
+	font-family: 'Anta';
+	transition: background-color 0.3s ease;
+}
+
+.menu-button:hover {
+	background-color: rgb(49, 49, 49);
+}
+
+.openMenuButton {
+	background-color: #222222;
+	color: #ffffff;
+	width: 45px;
+	height: 45px;
+	padding: 7px;
+	margin-left: 135px;
+	border-radius: 50%;
+	transition: background-color 0.3s ease;
+}
+
+.openMenuButton:hover {
+	background-color: #363636;
+}
+
+.sideMenuHeader {
+	position: fixed;
+	left: 0px;
+	top: 56px;
+	height: 95%;
+	background-color: #222222;
+	width: 310px;
+	overflow-x: hidden;
+	scrollbar-width: thin;
+	scrollbar-color: #606060 transparent;
+	transition: width 0.3s ease;
+
+	& header {
+	position: sticky;
+	display: flex;
+	top: 0px;
+	padding: 0 18px;
+	background-color: #222222;
+	height: 90px;
+
+	& h2 {
+		text-transform: uppercase;
+		font-family: 'Anta';
+		letter-spacing: 2px;
+		font-weight: 600;
+		color: #ffffff;
+	}
+	& .header-content {
+		display: flex;
+		align-items: center;
+	}
+	}
+}
+@media screen and (max-width: 800px) {
+	.sideMenuHeader {
+		width: 0;
+		overflow: hidden;
+	}
+	
+	.sideMenuHeader header {
+		display: none;
+	}
+}
+
+.conversationAvatar {
+	background-color: #9b59b6;
+	height: 48px;
+	width: 48px;
+	margin-left: 10px;
+	border-radius: 50%;
+	& i {
+		color: white;
+		font-size: 25px;
+		padding: 11px;
+	}
+}
+
+.conversationName {
+	margin-top: 8px;
+	font-weight: bold;
+	font-family: 'Anta';
+	font-size: 17px;
+	color: white;
+}
+
+.conversationLastMessage {
+	display: inline-block;
+	font-size: 17px;
+	color: white;
+	max-width: 220px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.author-name {
+	color: white;
+}
+
+.message-text {
+	color: #9b9b9b;
+}
+
+.no-messages {
+	color: #9b9b9b;
+}
+
+.messagePanelHeader {
+	display: flex;
+	align-items: center;
+	background-color: #222222;
+	margin-top: 30px;
+	width: 100%;
+	height: 84px;
+	margin-left: 1px;
+}
+
+.error-message {
+	color: rgb(136, 136, 136);
+	margin-top: -40px;
+}

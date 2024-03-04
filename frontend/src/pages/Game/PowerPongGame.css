@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.gameArea {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.square {
+    position: absolute;
+    background-color: white;
+    border: 2px solid red;
+}
+
+.power-bar-container {
+    width: 80%;
+    /* Adjust based on your design preference */
+    height: 20px;
+    /* Height of the power bar */
+    background-color: #ddd;
+    border: 1px solid #333;
+    margin-top: 10px;
+    /* Spacing between the canvas and the power bar */
+}
+
+.power-bar {
+    height: 100%;
+    background-color: #76AD3B;
+    /* Adjust color as needed */
+    transition: width 0.5s ease;
+}
+
+.current-power-display {
+    position: absolute;
+    bottom: 50px;
+    /* Adjust as needed */
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Center horizontally */
+    color: white;
+    font-size: 1.5em;
+    /* Adjust as needed */
+    text-align: center;
+}

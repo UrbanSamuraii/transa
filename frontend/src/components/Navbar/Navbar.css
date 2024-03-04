@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+    background-color: #000000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    z-index: 1;
+    font-family: 'Anta';
+    & :last-child {
+		color: white;
+        text-decoration: none;
+	}
+}
+
+.navbar.show {
+    top: 0;
+}
+
+.navbar-center {
+    display: flex;
+}
+
+.navbar-button {
+    position: relative;
+    background-color: transparent;
+    padding: 0.25rem 0.7rem;
+    font-size: 18px;
+    font-family: 'Anta';
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.navbar-button a {
+    color: white;
+    text-decoration: none;
+}
+
+.has-invitations .navbar-button a {
+    font-weight: bold;
+}
+
+.has-invitations .invitation-star {
+    color: yellow;
+    font-size: 14px;
+    margin-left: 1px; /* Adjust as needed for spacing */
+}
+
+.navbar-button:hover {
+    transform: scale(1.2);
+}
+
+.navbar-logo {
+    background-image: url('https://cdn2.iconfinder.com/data/icons/ping-pong-table-tennis-player/128/ping-pong-table-tennis-player-016-512.png');
+    background-repeat: no-repeat;
+    background-size: 93%;
+    background-position: 1px 1.5px;
+    background-color: #ffffffdc;
+    border-radius: 50%;
+    width: 42px;
+    height: 40px;
+    display: block;
+}
+
+
+/* Media Query for small screens */
+@media screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .navbar a,
+    .navbar button {
+        font-size: 14px;
+        margin: 5px;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-logo {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+}
+
+.profile-name {
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}

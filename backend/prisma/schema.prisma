@@ -1,0 +1,125 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider      = "prisma-client-js"
+    binaryTargets = ["native", "debian-openssl-3.0.x"]
+    port          = 5555
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id   Int  @id @default(autoincrement())
+    id42 Int? @unique
+
+    createdAt              DateTime  @default(now())
+    updatedAt              DateTime  @updatedAt
+    first_name             String    @db.VarChar(255)
+    last_name              String    @db.VarChar(255)
+    email                  String    @unique @db.VarChar(255)
+    username               String    @unique @db.VarChar(255)
+    img_url                String?   @db.VarChar(255)
+    hash                   String    @default("noTokenBecause42Identification")
+    accessToken            String    @default("noToken")
+    isRegistered           Boolean   @default(false)
+    is_two_factor_activate Boolean?  @default(false)
+    two_factor_secret      String?
+    eloRating              Int       @default(1000)
+    gamesWon               Game[]    @relation("WinnerRelation")
+    gamesLost              Game[]    @relation("LoserRelation")
+    totalGamesWon          Int       @default(0)
+    totalGamesLost         Int       @default(0)
+    gamesAsPlayer1         Game[]    @relation("Player1Games")
+    gamesAsPlayer2         Game[]    @relation("Player2Games")
+    messages               Message[] @relation("author")
+
+    conversationsOwner Conversation[] @relation("ownedConversations")
+    conversations      Conversation[] @relation("member")
+    conversationsAdmin Conversation[] @relation("admin")
+    bannedFrom         Conversation[] @relation("banned")
+    mutedFrom          Conversation[] @relation("muted")
+
+    blockedUsers User[] @relation("blockedUsers")
+    blockedBy    User[] @relation("blockedUsers")
+
+    invited_by User[]    @relation("invitedBy")
+    inviting   User[]    @relation("invitedBy")
+    friends    User[]    @relation("FriendsRelation")
+    friendOf   User[]    @relation("FriendsRelation")
+    status     status_t? @default(OFFLINE)
+
+    @@unique([id, email, username])
+    @@map("users")
+}
+
+model Game {
+    id              Int      @id @default(autoincrement())
+    createdAt       DateTime @default(now())
+    uniqueId        String   @unique
+    player1Id       Int
+    player2Id       Int
+    winnerId        Int?
+    loserId         Int?
+    gameMode        String   @default("classic")
+    eloChangeWinner Int?
+    eloChangeLoser  Int?
+
+    winner  User? @relation("WinnerRelation", fields: [winnerId], references: [id])
+    loser   User? @relation("LoserRelation", fields: [loserId], references: [id])
+    player1 User  @relation("Player1Games", fields: [player1Id], references: [id])
+    player2 User  @relation("Player2Games", fields: [player2Id], references: [id])
+
+    @@map("games")
+}
+
+model Conversation {
+    id   Int    @id @default(autoincrement())
+    name String @unique
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    privacy   privacy_t @default(PUBLIC)
+    protected Boolean   @default(false)
+    password  String?
+
+    owner   User? @relation("ownedConversations", fields: [ownerId], references: [id])
+    ownerId Int?
+
+    members User[] @relation("member")
+    admins  User[] @relation("admin")
+    banned  User[] @relation("banned")
+    muted   User[] @relation("muted")
+
+    messages Message[]
+
+    @@unique([id, name])
+    @@map("conversations")
+}
+
+model Message {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    message         String?
+    author          User         @relation("author", fields: [authorName], references: [username])
+    authorName      String
+    conversation    Conversation @relation(fields: [conversation_id], references: [id])
+    conversation_id Int
+}
+
+enum status_t {
+    ONLINE
+    OFFLINE
+    PLAYING
+}
+
+enum privacy_t {
+    PUBLIC
+    PRIVATE
+}

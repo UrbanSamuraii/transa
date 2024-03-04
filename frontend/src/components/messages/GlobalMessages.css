@@ -1,0 +1,139 @@
+.messageText {
+	display: block;
+	font-size: 18px;
+	color: white;
+	margin-bottom: 13px;
+}
+
+.messageAuthorName {
+	display: block;
+	font-style: italic;
+	font-size: 14px;
+	color: #db7eff;
+}
+
+.dateMessage {
+	display: block;
+	font-style: italic;
+	font-size: 12px;
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	color: #db7eff;
+}
+
+.scrollablePanel {
+	overflow-y: scroll;
+	width: 100%;
+	scrollbar-width: thin;
+	scrollbar-color: transparent transparent;
+	scroll-behavior: smooth;
+	scroll-snap-type: y mandatory;
+	position: absolute;
+	top: 114px;
+	bottom: 120px;
+}
+
+.messagePanelTitle {
+	padding: 10px;
+	background-color: transparent;
+	font-size: 36px;
+	font-family: 'Anta';
+	margin-left: 40px;
+	color: rgb(238, 238, 238);
+}
+
+.conv-menu-button {
+	color: white;
+	background-color: #222222;
+	border-radius: 50%;
+	padding: 1px;
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+	top: 50px;
+	right: 10%;
+	position: absolute;
+	transition: background-color 0.3s ease;
+}
+.conv-menu-button i {
+	font-size: 2.5rem;
+	padding: 4px;
+}
+
+.conv-menu-button:hover {
+	background-color: #363636;
+}
+
+.dropdown-menu {
+	z-index: 1000;
+	position: fixed;
+	left: 50%;
+	top: 52%;
+	transform: translate(-50%, -50%);
+}
+
+.owner-action-menu {
+	display: flex;
+	align-items: center;
+}
+
+.owner-action-menu button {
+	font-size: 10px;
+	color: rgb(54, 49, 121);
+}
+
+.convMenuButton {
+	height: 60px;
+	width: 250px;
+	background-color: rgb(29, 29, 29);
+	font-size: 20px;
+	font-family: 'Anta';
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background-color 0.3s ease;
+}
+.convMenuButton:hover {
+	background-color: rgb(49, 49, 49);
+}
+
+.overlay-chat {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+
+.privacy-toggle {
+	display: flex;
+	justify-content: space-between;
+}
+
+.toggle-button {
+	padding: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	width: 250px;
+	height: 60px;
+	font-size: 20px;
+	font-family: 'Anta';
+}
+
+.toggle-button.private {
+	background-color: #dd2525;
+}
+.toggle-button.private:hover {
+	background-color: #ff2e2e;
+}
+
+.toggle-button.public {
+	background-color: #276927;
+}
+.toggle-button.public:hover {
+	background-color: #358d35;
+}

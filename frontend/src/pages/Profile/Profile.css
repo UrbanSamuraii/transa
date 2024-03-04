@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+* {
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Likely future */
+}
+
+body {
+    overflow: hidden;
+}
+
+.bw-style {
+    background-image: url(https://static.vecteezy.com/system/resources/previews/030/697/151/non_2x/gray-minimalist-wallpaper-high-quality-4k-hdr-free-photo.jpg);
+    display: flex;
+    background-size: cover;
+    --text-color-main: #a26abd;
+    --text-color-main: #d4d4d4;
+    --text-color-dark: #ffffff9a;
+    --text-color-hover: white;
+    --text-color-accent: black;
+}
+
+
+.rainbow-style {
+    background-image: url(https://images.hdqwalls.com/wallpapers/abstract-geometry-glass-4k-tl.jpg);
+    display: flex;
+    background-size: cover;
+    --text-color-main: #27e6ffdc;
+    --text-color-dark: #27e6ffc0;
+    --text-color-hover: #27e6ff;
+    --text-color-accent: black;
+}
+
+.retrowave-style {
+    background-image: url(https://wallpapercrafter.com/desktop/103070-vaporwave-mountains-dark-minimalism.jpg
+    );
+    background-position: 50%;
+    display: flex;
+    background-size: cover;
+    --text-color-main: #ff2770dc;
+    --text-color-dark: #ff2770c0;
+    --text-color-hover: #ff2770;
+    --text-color-accent: #000000;
+}
+
+.rounded-image {
+    margin-top: 62px;
+    margin-left: 13px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.card {
+    width: 600px;
+    height: 380px;
+    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+	font-family: 'Anta';
+}
+
+.card h1 {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 30px;
+    color: var(--text-color-main);
+}
+
+.card .user-card {
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    height: 100%;
+    float: left;
+    width: 200px;
+}
+
+.card .user-card.rainbow-style {
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: color;
+    background-image: url(./rainbow.gif);
+}
+
+.card .user-card.retrowave-style {
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: color;
+    background-image: url(./retrowave.gif);
+}
+
+.card .user-card.bw-style {
+    background-color: black;
+    background-size: 300px;
+    background-repeat: repeat-x;
+    background-image: url(./bw-smoke.gif);
+}
+
+
+.card .user-card .level,
+.card .user-card .points {
+    position: absolute;
+    top: 40px;
+    left: 5%;
+    width: 90%;
+    color: var(--text-color-main);
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 0.125rem 0.75rem;
+    letter-spacing: 1px;
+}
+
+.card .user-card .points {
+    top: 310px;
+}
+
+.card .user-card .profile-picture {
+    align-items: center;
+    margin-top: 60px;
+    margin-left: 20px;
+}
+
+.card .more-info {
+    width: 400px;
+    position: absolute;
+    left: 200px;
+    height: 100%;
+}
+
+.card .more-info h1 {
+    text-transform: none;
+}
+
+.card .coords {
+    margin: 1rem;
+    font-size: 1.3rem;
+    color: var(--text-color-main);
+    margin-bottom: 50px;
+}
+
+.card .coords span+span {
+    float: right;
+}
+
+.card .stats {
+    font-size: 50px;
+    display: flex;
+    position: absolute;
+    top: 135px;
+    left: 1rem;
+    right: 1rem;
+    color: var(--text-color-main);
+    text-align: center;
+}
+
+.card .stats>div {
+    flex: 1;
+}
+
+.card .stats i {
+    display: block;
+}
+
+.card .stats .title {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.stats div:hover .title {
+    visibility: visible;
+    opacity: 1;
+}
+
+.card .stats .value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
+
+.card .stats .value.infinity {
+    font-size: 2.5rem;
+}
+
+.signout-button {
+    width: 40px;
+    height: 40px;
+    background-color: var(--text-color-main);
+    color: var(--text-color-accent);
+    padding: 0.5rem;
+    border-radius: 10px;
+    position: absolute;
+    right: 7px;
+    top: 7px;
+}
+
+.signout-button i {
+    position: relative;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.signout-button:hover {
+    background-color: var(--text-color-hover);
+}
+
+.edit-profile-name {
+    color: var(--text-color-main);
+    border-radius: 10px;
+    position: absolute;
+    right: 145px;
+    top: 20px;
+    transition: scale 0.3s ease;
+}
+
+.edit-profile-name i {
+    position: relative;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.edit-profile-name:hover {
+    color: var(--text-color-hover);
+    scale: 1.2;
+}
+
+.edit-profile {
+    width: 40px;
+    height: 40px;
+    background-color: var(--text-color-main);
+    color: var(--text-color-accent);
+    padding: 0.5rem;
+    border-radius: 10px;
+    position: absolute;
+    right: 34px;
+    bottom: 20px;
+}
+
+.edit-profile i {
+    position: relative;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.edit-profile:hover {
+    background-color: var(--text-color-hover);
+}
+
+.leaderboard-button {
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    width: 165px;
+    font-family: 'Anta';
+    height: 40px;
+    background-color: var(--text-color-main);
+    color: var(--text-color-accent);
+    padding: 0.7rem;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 20px;
+    letter-spacing: 0.5px;
+    margin-left: 150px;
+}
+
+.leaderboard-button:hover {
+    background-color: var(--text-color-hover);
+}
+
+.twoFA-button {
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    width: 50px;
+    height: 40px;
+    background-color: var(--text-color-main);
+    color: var(--text-color-accent);
+    padding: 0.3rem 0rem;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 20px;
+    letter-spacing: 0.5px;
+    font-size: 15px;
+}
+
+.twoFA-button i {
+    position: relative;
+    align-items: center;
+}
+
+.twoFA-button:hover {
+    background-color: var(--text-color-hover);
+}
+
+.twoFA-button-on {
+    margin-left: 34px;
+}
+
+.twoFA-button-off {
+    margin-left: 89px;
+}
+
+
+.skill-name {
+    bottom: 82px;
+    left: 10px;
+    display: flex;
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color-main);
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+.skill-bar {
+    display: flex;
+    position: absolute;
+    bottom: 80px;
+    left: 10px;
+    height: 14px;
+    width: 380px;
+    background-color: transparent;
+    border: 1px solid var(--text-color-dark);
+    border-radius: 5px;
+}
+
+.skill-per {
+    display: flex;
+    position: relative;
+    bottom: 8%;
+    height: 14px;
+    background-color: var(--text-color-main);
+    border-radius: 5px;
+    animation: fillBars 2.5s;
+}
+
+@keyframes fillBars {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.separator {
+    border-top: 1px solid var(--text-color-dark);
+    margin: 10px 10px;
+}

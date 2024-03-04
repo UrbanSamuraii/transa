@@ -1,0 +1,77 @@
+.leaderboard-background {
+    display: block;
+    background-image: url('https://wallpaperaccess.com/full/4848691.jpg');
+    background-color: #00000050;
+    background-blend-mode: color;
+    background-size: cover;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Anta';
+    & h1 {
+        letter-spacing: 2px;
+    }
+}
+
+.leaderboard-container {
+    background-color: #1a1a1abb;
+    height: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #1a1a1a;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+thead {
+    font-size: 16px;
+    height: 50px;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid #363636;
+}
+
+th {
+    background-color: #222222;
+    letter-spacing: 0.5px;
+}
+
+tr:nth-child(even) {
+    background-color: #242424;
+}
+
+tr:hover {
+    background-color: #363636;
+}
+
+h1 {
+    color:  white;
+    margin-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.search-input {
+    position: relative;
+    padding: 12px;
+    font-size: 17px;
+    width: 100%;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    background-color: #222222;
+    border: none;
+}
+
+.search-input-container {
+    padding: 5px 40px;
+}

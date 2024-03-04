@@ -1,0 +1,105 @@
+.background {
+    display: flex;
+    background-image: url('https://i.gifer.com/HU32.gif');
+    background-color: #00000050;
+    background-blend-mode: color;
+    background-size: cover;
+    height: 100%;
+}
+
+.container {
+    position: relative;
+    width: 340px;
+    height: 180px;
+    margin: auto;
+    background-color: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    align-items: center;
+}
+
+.ball {
+    height: 25px;
+    width: 25px;
+    margin-top: 15px;
+    position: absolute;
+    border-radius: 50%;
+    left: 20%;
+    animation: ball .5s alternate infinite ease;
+}
+@keyframes ball {
+    0% {
+        top: 90px;
+        height: 5px;
+        border-radius: 50px 50px 25px 25px;
+        transform: scaleX(1.7);
+        background-color: #45f3ff;
+    }
+    40% {
+        height: 20px;
+        border-radius: 50%;
+        transform: scaleX(1);
+        background-color: #b69ece;
+    }
+    100% {
+        top: 0%;
+        background-color: #ff2770;
+    }
+}
+.ball:nth-child(2) {
+    left: 45%;
+    animation-delay: .2s;
+}
+.ball:nth-child(3) {
+    left: auto;
+    right: 20%;
+    animation-delay: .3s;
+}
+
+.shadow {
+    width: 25px;
+    height: 5px;
+    border-radius: 50%;
+    margin-top: 45px;
+    position: absolute;
+    top: 64px;
+    left: 20%;
+    filter: blur(1px);
+    animation: shadow .5s alternate infinite ease;
+}
+@keyframes shadow {
+    0% {
+        transform: scaleX(1.5);
+        background-color: gray;
+    }
+    40% {
+        transform: scaleX(1);
+        opacity: .7;
+        background-color: gray;
+    }
+    100% {
+        transform: scaleX(.2);
+        opacity: .4;
+        background-color: gray;
+    }
+}
+.shadow:nth-child(4) {
+    left: 45%;
+    animation-delay: .2s;
+}
+.shadow:nth-child(5) {
+    left: auto;
+    right: 20%;
+    animation-delay: .3s;
+}
+
+.searching-text {
+    color: white;
+    position: absolute;
+    top: 135px;
+    left: 57px;
+    font-family: 'Anta';
+    letter-spacing: 1px;
+    font-size: 20px;
+}

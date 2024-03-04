@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  # POSTGRES
+  postgres:
+    container_name: postgres
+    image: postgres:13.5
+    restart: always
+    ports:
+      - 5432:5432
+    env_file:
+      - ./backend/.env
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    networks:
+      - transcendance
+
+  # BACKEND
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend
+    restart: always
+    env_file:
+      - ./backend/.env
+    ports:
+      - 3001:3001 # Expose your NestJS app's port
+      - 3002:3002 # Game Websockets
+      # - 3003:3003 # Chat Websockets
+      - 5555:5555 # Expose a port for Prisma Studio
+    depends_on:
+      - postgres
+    networks:
+      - transcendance
+    volumes:
+      - ./backend:/app
+
+  # FRONTEND
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    restart: always
+    ports:
+      - 3000:3000
+    env_file:
+      - ./frontend/.env
+    depends_on:
+      - backend
+    networks:
+      - transcendance
+    volumes:
+      - ./frontend:/app
+      # - /app/node_modules/
+
+networks:
+  transcendance:
+
+
+volumes:
+  postgres:
